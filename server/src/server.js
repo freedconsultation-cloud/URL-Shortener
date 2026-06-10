@@ -59,7 +59,7 @@ app.post('/api/links', createLimiter, async (req, res) => {
     return res.status(400).json({ error: 'Slug can only contain letters, numbers, hyphens, and underscores' });
   }
 
-  const finalSlug = rawSlug || nanoid(6);
+  const finalSlug = rawSlug || nanoid(4);
 
   try {
     const link = await prisma.link.create({
